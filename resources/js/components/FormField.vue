@@ -10,9 +10,8 @@
             >
           </td>
           <td>
-            <input class="form-control form-input form-input-bordered"
+            <input type="checkbox" class="form-control form-input form-input-bordered"
                    v-model="value[index]['oneValue']"
-                   required
             >
           </td>
           <td>
@@ -34,7 +33,7 @@
           <div class="booleanMultiStatusIcon" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
             <boolean-icon :key="name" :value="value" />
           </div>
-          <div v-if="field.showKeysAsTooltips" class="booleanMultiStatusTooltip absolute top-0 10" style="width: 140px; z-index: 10;" x-cloak x-show.transition.origin.top="tooltip">
+          <div v-if="field.showKeysAsTooltips" class="booleanMultiStatusTooltip absolute top-0 10" x-cloak x-show.transition.origin.top="tooltip">
             <div class="w-32 p-2 -mt-1 text-sm leading-tight transform -translate-x-1/2 -translate-y-full bg-80 bg-white rounded-lg shadow-lg">
               {{name}}
             </div>
@@ -73,12 +72,12 @@ export default {
     setInitialValue() {
       if (this.field.value) {
         this.value = Object.keys(this.field.value)
-        .map((index) => {
-          return {
-            key: index,
-            oneValue: this.field.value[index],
-          }
-        });
+            .map((index) => {
+              return {
+                key: index,
+                oneValue: this.field.value[index],
+              }
+            });
       } else {
         this.value = [];
       }
@@ -87,7 +86,7 @@ export default {
     addValue() {
       this.value.push({
         key: 'new-key',
-        oneValue: '',
+        oneValue: false,
       });
     },
 

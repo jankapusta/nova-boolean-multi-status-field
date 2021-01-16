@@ -2206,7 +2206,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2265,7 +2264,6 @@ var render = function() {
                 "div",
                 {
                   staticClass: "booleanMultiStatusTooltip absolute top-0 10",
-                  staticStyle: { width: "140px", "z-index": "10" },
                   attrs: {
                     "x-cloak": "",
                     "x-show.transition.origin.top": "tooltip"
@@ -2278,7 +2276,7 @@ var render = function() {
                       staticClass:
                         "w-32 p-2 -mt-1 text-sm leading-tight transform -translate-x-1/2 -translate-y-full bg-80 bg-white rounded-lg shadow-lg"
                     },
-                    [_vm._v("\n          " + _vm._s(name) + "\n        ")]
+                    [_vm._v("\n        " + _vm._s(name) + "\n      ")]
                   )
                 ]
               )
@@ -2434,7 +2432,6 @@ var render = function() {
                       {
                         staticClass:
                           "booleanMultiStatusTooltip absolute top-0 10",
-                        staticStyle: { width: "140px", "z-index": "10" },
                         attrs: {
                           "x-cloak": "",
                           "x-show.transition.origin.top": "tooltip"
@@ -2577,7 +2574,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -2587,7 +2583,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['resourceName', 'resourceId', 'field'],
 
   created: function created() {
-    console.log('decide on array');
     this.useArray = Array.isArray(this.field.value);
     if (this.field.readonly) {
       this.field.width = this.field.width ? this.field.width + 'px' : 'auto';
@@ -2601,11 +2596,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
 
-  //
-  // data: () => ({
-  //   isArray:
-  // }),
-
   methods: {
     /*
      * Set the initial, internal value for the field.
@@ -2613,7 +2603,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     setInitialValue: function setInitialValue() {
       var _this = this;
 
-      console.log('setInitialValue');
       if (this.field.value) {
         this.value = Object.keys(this.field.value).map(function (index) {
           return {
@@ -2628,7 +2617,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     addValue: function addValue() {
       this.value.push({
         key: 'new-key',
-        oneValue: ''
+        oneValue: false
       });
     },
     removeValue: function removeValue(index) {
@@ -2651,8 +2640,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           dataset[one['key']] = one['oneValue'];
         });
       }
-      console.log('storing:');
-      console.log(JSON.stringify(dataset));
       formData.append(this.field.attribute, JSON.stringify(dataset));
     }
   }
@@ -28991,18 +28978,38 @@ var render = function() {
                         ],
                         staticClass:
                           "form-control form-input form-input-bordered",
-                        attrs: { required: "" },
-                        domProps: { value: _vm.value[index]["oneValue"] },
+                        attrs: { type: "checkbox" },
+                        domProps: {
+                          checked: Array.isArray(_vm.value[index]["oneValue"])
+                            ? _vm._i(_vm.value[index]["oneValue"], null) > -1
+                            : _vm.value[index]["oneValue"]
+                        },
                         on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                          change: function($event) {
+                            var $$a = _vm.value[index]["oneValue"],
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.value[index],
+                                    "oneValue",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.value[index],
+                                    "oneValue",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.value[index], "oneValue", $$c)
                             }
-                            _vm.$set(
-                              _vm.value[index],
-                              "oneValue",
-                              $event.target.value
-                            )
                           }
                         }
                       })
@@ -29090,7 +29097,6 @@ var render = function() {
                           {
                             staticClass:
                               "booleanMultiStatusTooltip absolute top-0 10",
-                            staticStyle: { width: "140px", "z-index": "10" },
                             attrs: {
                               "x-cloak": "",
                               "x-show.transition.origin.top": "tooltip"

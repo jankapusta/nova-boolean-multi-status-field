@@ -1,13 +1,13 @@
 {
     "name": "jankapusta/nova-boolean-multi-status-field",
     "description": "Laravel Nova custom field for showing activity history by colorful matrix",
+    "version": "0.1.1",
     "keywords": [
         "laravel",
         "nova",
-        "status",
-        "matrix",
-        "activity history",
-        "color range"
+        "boolean status",
+        "multi status",
+        "activity history"
     ],
     "license": "MIT",
     "require": {
