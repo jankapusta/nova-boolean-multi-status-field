@@ -1,0 +1,33 @@
+{
+    "name": "jankapusta/nova-boolean-multi-status-field",
+    "description": "Laravel Nova custom field for showing activity history by colorful matrix",
+    "keywords": [
+        "laravel",
+        "nova",
+        "status",
+        "matrix",
+        "activity history",
+        "color range"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jankapusta\\NovaBooleanMultiStatusField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jankapusta\\NovaBooleanMultiStatusField\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
