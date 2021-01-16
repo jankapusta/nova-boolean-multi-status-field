@@ -8,10 +8,12 @@ If the data is an object, keys will be editable and will be displayed as tooltip
 
 [repository on github](https://github.com/jankapusta/nova-boolean-multi-status-field)
 
-Posibility to edit boolean vaules (checkboxes) with string keys.
+Posibility to edit boolean vaules (checkboxes) with string keys:
+
 ![Screenshot Form](screenshot-form.png)
 
 Display boolean values using standard Nova icons. Showing keys on hover:
+
 ![Screenshot Index](screenshot-index.png)
 
 ## Installation
