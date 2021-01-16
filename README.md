@@ -55,7 +55,7 @@ Then add a field into Nova Resource
 BooleanMultiStatus::make('Car checks', 'car_multi_status')
 // optional configuration
   ->showKeysAsTooltips(false)
-  ->widt(80), // in pixels
+  ->width(80), // in pixels
 ```
 
 ## License
