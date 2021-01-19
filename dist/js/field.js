@@ -2263,7 +2263,8 @@ var render = function() {
             ? _c(
                 "div",
                 {
-                  staticClass: "booleanMultiStatusTooltip absolute top-0 10",
+                  staticClass: "booleanMultiStatusTooltip absolute 10",
+                  staticStyle: { "pointer-events": "none" },
                   attrs: {
                     "x-cloak": "",
                     "x-show.transition.origin.top": "tooltip"
@@ -2276,7 +2277,7 @@ var render = function() {
                       staticClass:
                         "w-32 p-2 -mt-1 text-sm leading-tight transform -translate-x-1/2 -translate-y-full bg-80 bg-white rounded-lg shadow-lg"
                     },
-                    [_vm._v("\n        " + _vm._s(name) + "\n      ")]
+                    [_vm._v("\n          " + _vm._s(name) + "\n        ")]
                   )
                 ]
               )
@@ -2430,8 +2431,8 @@ var render = function() {
                   ? _c(
                       "div",
                       {
-                        staticClass:
-                          "booleanMultiStatusTooltip absolute top-0 10",
+                        staticClass: "booleanMultiStatusTooltip absolute 10",
+                        staticStyle: { "pointer-events": "none" },
                         attrs: {
                           "x-cloak": "",
                           "x-show.transition.origin.top": "tooltip"
@@ -29096,7 +29097,8 @@ var render = function() {
                           "div",
                           {
                             staticClass:
-                              "booleanMultiStatusTooltip absolute top-0 10",
+                              "booleanMultiStatusTooltip absolute 10",
+                            staticStyle: { "pointer-events": "none" },
                             attrs: {
                               "x-cloak": "",
                               "x-show.transition.origin.top": "tooltip"

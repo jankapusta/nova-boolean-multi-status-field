@@ -4,7 +4,7 @@
         <div class="booleanMultiStatusIcon" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
           <boolean-icon :key="name" :value="value" />
         </div>
-        <div v-if="field.showKeysAsTooltips" class="booleanMultiStatusTooltip absolute 10" x-cloak x-show.transition.origin.top="tooltip">
+        <div v-if="field.showKeysAsTooltips" class="booleanMultiStatusTooltip absolute 10" x-cloak x-show.transition.origin.top="tooltip" style="pointer-events:none;">
           <div class="w-32 p-2 -mt-1 text-sm leading-tight transform -translate-x-1/2 -translate-y-full bg-80 bg-white rounded-lg shadow-lg">
             {{name}}
           </div>
