@@ -25,7 +25,7 @@ class BooleanMultiStatus extends Field
     public function showKeysAsTooltips($value = true)
     {
         return $this->withMeta([
-            'showKeysAsTooltips' => $value,
+            'showTooltips' => $value,
         ]);
     }
 
